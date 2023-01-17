@@ -1,6 +1,9 @@
 <?php
 
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Event;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('events', [
+        'heading' => 'Latest Masterclass',
+        'events' => Event::all()
+    ]);
+});
+
+Route::get('/hello', function (){
+    return response('<h1>Hello Developer FullStack Isaac</h1>',200)
+    ->header('Content-Type', 'text/plain');
+});
+
+Route::get('/post/{id}', function($id) {
+    
+    return response('Postttt' . $id);
+})->where('id', '[0-9]+');
+
+Route::get('/search', function(Request $request) {
+    return $request->name  . $request->city;
 });
