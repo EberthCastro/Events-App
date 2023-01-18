@@ -19,14 +19,21 @@ use App\Models\Event;
 //All Listings
 Route::get('/', function () {
     return view('events', [
-        'heading' => 'Latest Masterclass',
+        
         'events' => Event::all()
     ]);
 });
 
 //Single Event
-route::get('/events/{id}', function($id) {
-    return view('event', [
-        'event' => Event::find($id)
-    ]);
+route::get('/events/{event}', function(Event $event) {
+    
+
+    
+        return view('event', [
+            'event' => $event
+        ]);
+        
+    
+
+
 });
