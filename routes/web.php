@@ -16,6 +16,7 @@ use App\Models\Event;
 |
 */
 
+//All Listings
 Route::get('/', function () {
     return view('events', [
         'heading' => 'Latest Masterclass',
@@ -23,16 +24,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/hello', function (){
-    return response('<h1>Hello Developer FullStack Isaac</h1>',200)
-    ->header('Content-Type', 'text/plain');
-});
-
-Route::get('/post/{id}', function($id) {
-    
-    return response('Postttt' . $id);
-})->where('id', '[0-9]+');
-
-Route::get('/search', function(Request $request) {
-    return $request->name  . $request->city;
+//Single Event
+route::get('/events/{id}', function($id) {
+    return view('event', [
+        'event' => Event::find($id)
+    ]);
 });
