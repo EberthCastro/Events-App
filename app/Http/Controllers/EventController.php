@@ -12,7 +12,7 @@ class EventController extends Controller
         return view('events.index', [
         
             // 'events' => Event::all()
-            'events' => Event::latest()->filter(request(['tag']))->get()
+            'events' => Event::latest()->filter(request(['tag', 'search']))->get()
         ]);
     }
 
