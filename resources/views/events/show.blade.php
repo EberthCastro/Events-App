@@ -1,14 +1,16 @@
-@extends('layout')
+{{-- @extends('layout')
 
-@section('content')
+@section('content') --}}
+
+<x-layout>
     
 
 <a href="/" class="inline-block text-black ml-4 mb-4 text-white"><i class="fa-solid fa-arrow-left"></i> Back
 </a>
 <div class="mx-4">
-  {{-- <x-card class="p-10"> --}}
+  <x-card class="p-2 bg-black text-white">
     <div class="flex flex-col border border-gray-200 items-center justify-center text-center">
-      <img class="w-48 mr-6 mb-6"
+      <img class="w-40 mr-6 mb-6"
         src=" {{asset('images/docker.png')}}
         {{-- {{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}} --}}
         " alt="" />
@@ -40,7 +42,7 @@
         </div>
       </div>
     </div>
-  {{-- </x-card> --}}
+  </x-card>
 
   {{-- <x-card class="mt-4 p-2 flex space-x-6">
     <a href="/listings/{{$listing->id}}/edit">
@@ -55,4 +57,6 @@
   </x-card> --}}
 </div>
 
-@endsection
+</x-layout>
+
+{{-- @endsection --}}

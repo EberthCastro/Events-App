@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\EventController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Event;
@@ -16,24 +16,15 @@ use App\Models\Event;
 |
 */
 
-//All Listings
-Route::get('/', function () {
-    return view('events', [
-        
-        'events' => Event::all()
-    ]);
-});
+//All Events
+Route::get('/', [EventController::class, 'index']);
 
 //Single Event
-route::get('/events/{event}', function(Event $event) {
-    
+Route::get('/events/{event}', [EventController::class, 'show']);
 
-    
-        return view('event', [
-            'event' => $event
-        ]);
-        
-    
-
-
+//LOgin
+Route::get('/login', function() {
+    return view('components/login');
 });
+
+
