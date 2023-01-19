@@ -23,6 +23,7 @@ class EventFactory extends Factory
             'time' => $this->faker->time(),
             'location'=>$this->faker->city(),
             'max_participants' => '15',
+            'tags' => 'Vue, Laravel, Docker',
             'available' => 'yes',
             'link' => $this->faker->url(),
         ];

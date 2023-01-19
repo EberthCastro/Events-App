@@ -1,4 +1,4 @@
-{{-- this works to fetch the tags from the column tag of database and separate by the ',' and render individually --}}
+{{-- this works to fetch the tags from the column tag of database and separate by the ',' and render individually  Csv : coma separated value --}}
 
 @props(['tagsCsv'])
 

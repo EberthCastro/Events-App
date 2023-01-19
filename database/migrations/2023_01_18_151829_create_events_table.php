@@ -21,7 +21,8 @@ return new class extends Migration
             $table->time('time');
             $table->string('location');
             $table->string('max_participants');
-            $table->string('available'); 
+            $table->string('tags');            
+            $table->string('available');
             $table->string('link');           
             $table->timestamps();
         });

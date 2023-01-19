@@ -5,7 +5,7 @@
     {{-- <div class="lg:grid lg:grid-cols-1 gap-4 space-y-4 md:space-y-0 md:container md:mx-auto">
         
         --}}
-        <div class="bg-gray-50 border border-gray-200 rounded p-6"> 
+    <div class="bg-gray-50 border border-gray-200 rounded p-6"> 
 
         <div class="flex text-black">
             <img class=" w-20  h-20 mr-6 " src="{{asset('images/logotechcircle.jpg')}}" alt="">
@@ -15,7 +15,9 @@
                 <h3 class="text-2xl">
                     <a href="/events/{{$event->id}}">{{ $event->title }}</a>
                 </h3>
-                <div class="text-xl font-bold mb-4">{{ $event->description }}</div>
+                <div class="text-xl font-bold mb-4">{{ $event->description }}
+                    <x-event-tags :tagsCsv="$event->tags"/>
+                </div>
                 <ul class="flex">
                     <li class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs">
                         <a href="#">{{ $event->date }}</a>

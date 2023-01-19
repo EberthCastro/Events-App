@@ -8,7 +8,7 @@
 <a href="/" class="inline-block text-black ml-4 mb-4 text-white"><i class="fa-solid fa-arrow-left"></i> Back
 </a>
 <div class="mx-4">
-  <x-card class="p-2 bg-black text-white">
+  <x-card class="p-2 ">
     <div class="flex flex-col border border-gray-200 items-center justify-center text-center">
       <img class="w-40 mr-6 mb-6"
         src=" {{asset('images/docker.png')}}
@@ -30,6 +30,7 @@
         <h3 class="text-3xl font-bold mb-4">Description</h3>
         <div class="text-lg space-y-6">
           {{$event->description}}
+          <x-event-tags :tagsCsv="$event->tags"/>
 
           {{-- <a href="mailto:{{$listing->email}}"
             class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"><i
