@@ -15,6 +15,10 @@ use App\Models\Event;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//LOgin
+Route::get('/login', function() {
+    return view('components/login');
+});
 
 //All Events
 Route::get('/', [EventController::class, 'index']);
@@ -22,9 +26,5 @@ Route::get('/', [EventController::class, 'index']);
 //Single Event
 Route::get('/events/{event}', [EventController::class, 'show']);
 
-//LOgin
-Route::get('/login', function() {
-    return view('components/login');
-});
 
 
