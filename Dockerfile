@@ -1,5 +1,5 @@
 # CARGAMOS IMAGEN DE PHP MODO ALPINE SUPER REDUCIDA
-FROM eberthdev/eventappv9:latest
+FROM eberthdev/eventappv9
 
 RUN curl -sS https://getcomposer.org/installer​ | php -- \
      --install-dir=/usr/local/bin --filename=composer
@@ -22,3 +22,5 @@ RUN php artisan octane:install --server="swoole"
 CMD php artisan octane:start --server="swoole" --host="0.0.0.0"
 
 EXPOSE 8000
+
+
